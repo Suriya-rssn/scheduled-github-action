@@ -19,5 +19,5 @@ jobs:
           git config user.name "DevSync Bot"
           git config user.email "23f2005377@ds.study.iitm.ac.in"
           git add daily-log.txt
-          git commit -m "Automated daily update"
-          git push
+          git commit -m "Automated daily update" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
